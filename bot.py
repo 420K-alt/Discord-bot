@@ -5,14 +5,14 @@ import asyncio
 import random
 import os
 
-bot = commands.Bot(command_prefix = "ez ")
+bot = commands.Bot(command_prefix = " PUT THE PREFIX YOU WANT ")
 @bot.remove_command("help")
 
 # --------------------------------------------------------------------  BOT ON READY START  --------------------------------------------------------------------
 @bot.event
 async def on_ready():
-    print("Im runing bicth")
-    await bot.change_presence(activity=discord.Game('420 & LoTus'))
+    print("on")
+    await bot.change_presence(activity=discord.Game('You can put youre name here'))
 # --------------------------------------------------------------------  BOT ON READY END  --------------------------------------------------------------------
 
 
@@ -71,6 +71,7 @@ async def help(ctx):
     embedVar.add_field(name="-----RAID-----", value=raid_text, inline=False)
     embedVar.set_thumbnail(url = "https://cdn.discordapp.com/attachments/737813830859489303/762087036538454026/79433c696ad38cf37f778d193d33ea69.png")
     embedVar.set_image(url="https://cdn.discordapp.com/attachments/730024711546994773/766083065654804500/unknown.png")
+    #You can change the picture with a discord link
 
     await ctx.channel.send(embed=embedVar)
 # --------------------------------------------------------------------  HELP PANNEL END  --------------------------------------------------------------------
@@ -85,6 +86,7 @@ async def gay(ctx):
     embed.set_author(name="Ez Tools Bot")
     await ctx.send(embed = embed)
     print("Done")
+    #You can change the picture with a discord link
 
 @bot.command()
 async def qi(ctx):
@@ -94,6 +96,7 @@ async def qi(ctx):
     embed.set_author(name="Ez Tools Bot")
     await ctx.send(embed = embed)
     print("done")
+    #same, you can change the picture with a discord link
 
 @bot.command()
 async def chifoumi(ctx, choix):
@@ -111,7 +114,7 @@ async def chifoumi(ctx, choix):
         embed = discord.Embed(colour=0x000000)
         embed = discord.Embed(title="EQUAL", description=f" User: {user_choix} \nBot: {bot_choix}", inline=False)
         embed.set_image(url="https://cdn.discordapp.com/attachments/734943221914009660/772573603925458984/cartoon-rock-paper-scissors-vector-characters-ConvertImage.jpg")
-        embed.set_author(name="Ez Tools Bot")
+        embed.set_author(name="Bot")
         await ctx.send(embed = embed)
 
     if result == 1:
@@ -122,7 +125,7 @@ async def chifoumi(ctx, choix):
         embed = discord.Embed(colour=0x000000)
         embed = discord.Embed(title="VICTORY", description=f" User: {user_choix} \nBot: {bot_choix}", inline=False)
         embed.set_image(url="https://cdn.discordapp.com/attachments/734943221914009660/772573603925458984/cartoon-rock-paper-scissors-vector-characters-ConvertImage.jpg")
-        embed.set_author(name="Ez Tools Bot")
+        embed.set_author(name="Bot")
         await ctx.send(embed = embed)
 
     if result == 2:
@@ -133,7 +136,7 @@ async def chifoumi(ctx, choix):
         embed = discord.Embed(colour=0x000000)
         embed = discord.Embed(title="DEFEAT", description=f" User: {user_choix} \nBot: {bot_choix}", inline=False)
         embed.set_image(url="https://cdn.discordapp.com/attachments/734943221914009660/772573603925458984/cartoon-rock-paper-scissors-vector-characters-ConvertImage.jpg")
-        embed.set_author(name="Ez Tools Bot")
+        embed.set_author(name="Bot")
         await ctx.send(embed = embed)
 
 
@@ -157,7 +160,7 @@ async def botinfo(ctx):
     embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/737813830859489303/762087036538454026/79433c696ad38cf37f778d193d33ea69.png")
     embed.add_field(name="NAME", value="Ez Tools Bot", inline=False)
     embed.add_field(name="PREFIX", value="ez", inline=False)
-    embed.add_field(name="DEV", value="420 & loTus01", inline=False)
+    embed.add_field(name="DEV", value="YOURE NAME", inline=False)
     embed.add_field(name="GUILDS", value=str(len(bot.guilds)), inline=False)
 
     await ctx.send(embed=embed)
@@ -174,17 +177,6 @@ async def userinfo(ctx, member:discord.Member):
     embed.add_field(name="\nCreated at:", value=member.created_at.strftime("%a, %#d %B %Y, %I:%M %p"))
     await ctx.send(embed=embed)
 
-@bot.command()
-#@commands.has_permissions(administrator=True)
-async def eztool(ctx):
-    embed = discord.Embed(title = "**EZ TOOLS**")
-    embed = discord.Embed(description="It's a team based on the proggramation with python. The team is composed of 4 people : **Traxsab**, **420**, **Hawks** and **loTus**. They already did a lot of projet like ultra gen, keylogger, mail bomber, bot raid and more...")
-    embed.set_thumbnail(url = "https://cdn.discordapp.com/attachments/737813830859489303/762087036538454026/79433c696ad38cf37f778d193d33ea69.png")
-    embed.set_image(url="https://cdn.discordapp.com/attachments/730024711546994773/766073152040075304/unknown.png")
-    embed.set_author(name="Ez Tools Bot")
-    await ctx.send(embed = embed)
-    print("done")
-
 
 # --------------------------------------------------------------------  USFUL COMMAND END  --------------------------------------------------------------------
 
@@ -193,7 +185,7 @@ async def eztool(ctx):
 @bot.command()
 async def nude(ctx):
     folder = os.path.dirname(os.path.abspath(__file__))
-    folder = folder + "/#THE_SHITE_WE_NEED/nude.txt"
+    folder = folder + "/#THE_SHITE_WE_NEED/nude.txt"  #for this command u need to create a file and put some picture in it, whatever type of picture but you need to declare the path 
     random_lines = random.choice(open(folder).readlines())
     embed = discord.Embed(title = f"nude asked by {ctx.message.author}")
     embed.set_image(url=random_lines)
@@ -202,7 +194,7 @@ async def nude(ctx):
 
 @bot.command()
 async def hentai(ctx):
-    folder = os.path.dirname(os.path.abspath(__file__))
+    folder = os.path.dirname(os.path.abspath(__file__)) #same as nude
     folder = folder + "/#THE_SHITE_WE_NEED/hentai.txt"
     random_lines = random.choice(open(folder).readlines())
     embed = discord.Embed(title = f"nude asked by {ctx.message.author}")
@@ -250,4 +242,5 @@ async def clear(ctx, amount=3):
 # --------------------------------------------------------------------  MODERATOR COMMAND END  --------------------------------------------------------------------
 
 
-bot.run("NzY2MDYwMzU1MTg4NTU1ODU3.X4d3TQ.Lv27VmgvIJKPSRNUwpv4evG13gE")
+bot.run("The token of youre bot")
+#by 420 and loTus01
