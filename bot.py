@@ -46,10 +46,6 @@ async def help(ctx):
 
     ''')
 
-    raid_text = ('''
-    NOTHING HERE FOR THE MOMENT
-    ''')
-
     nsfw_text = ('''
     `ez nude` = sends nice nudes in your dm
     `ez hentai` = sends nice hentai in your dm
@@ -68,7 +64,6 @@ async def help(ctx):
     embedVar.add_field(name="-----USFUL-----", value=utile_text, inline=False)
     embedVar.add_field(name="-----MODARATION-----", value=modo_text, inline=False)
     embedVar.add_field(name="-----NSFW-----", value=nsfw_text, inline=False)
-    embedVar.add_field(name="-----RAID-----", value=raid_text, inline=False)
     embedVar.set_thumbnail(url = "https://cdn.discordapp.com/attachments/737813830859489303/762087036538454026/79433c696ad38cf37f778d193d33ea69.png")
     embedVar.set_image(url="https://cdn.discordapp.com/attachments/730024711546994773/766083065654804500/unknown.png")
     #You can change the picture with a discord link
